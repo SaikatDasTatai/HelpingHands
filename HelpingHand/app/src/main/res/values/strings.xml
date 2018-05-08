@@ -23,4 +23,23 @@
     <string name="nav_header_subtitle">shakti.chouhan@pratian.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="text_blood_group">BLOOD GROUP</string>
+    <string name="text_city">CITY</string>
+    <string-array name="blood_type">
+        <item>A+</item>
+        <item>O+</item>
+        <item>B+</item>
+        <item>AB+</item>
+        <item>A-</item>
+        <item>O-</item>
+        <item>B-</item>
+        <item>AB-</item>
+    </string-array>
+    <string-array name="city_dropdown">
+        <item>BENGALURU</item>
+        <item>JAIPUR</item>
+        <item>MUMBAI</item>
+        <item>KOLKATA</item>
+
+    </string-array>
 </resources>
