@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity
         LocationSearchFragment myf = new LocationSearchFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.hhframelayout, myf);
+        transaction.replace(R.id.hhframelayout, myf);
         transaction.commit();
     }
 
