@@ -1,5 +1,7 @@
 package techgig.pirates.com.helpinghand;
 
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,8 +15,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import techgig.pirates.com.helpinghand.fragments.LocationSearchFragment;
+import techgig.pirates.com.helpinghand.fragments.dummy.DummyContent;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener ,LocationSearchFragment.OnListFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,17 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        setupLocationFragment();
+
+    }
+    private void setupLocationFragment(){
+        LocationSearchFragment myf = new LocationSearchFragment();
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.hhframelayout, myf);
+        transaction.commit();
     }
 
     @Override
@@ -86,5 +102,10 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
     }
 }
