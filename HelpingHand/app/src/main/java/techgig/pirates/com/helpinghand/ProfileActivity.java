@@ -60,7 +60,7 @@ public class ProfileActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startInternalActivity(SettingsActivity.class);
+            startInternalActivity(ProfileActivity.class);
         }
 
         return super.onOptionsItemSelected(item);
@@ -76,7 +76,7 @@ public class ProfileActivity extends AppCompatActivity
             startInternalActivity(MainActivity.class);
 
         }  else if (id == R.id.nav_manage) {
-            startInternalActivity(SettingsActivity.class);
+            startInternalActivity(ProfileActivity.class);
 
         }
 
