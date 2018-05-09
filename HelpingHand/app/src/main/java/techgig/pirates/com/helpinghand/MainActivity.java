@@ -49,11 +49,6 @@ FrameLayout mSearchResult;
         initializeLayoutVariables();
         setupEventListeners();
 
-
-
-
-        setupLocationFragment();
-
     }
    private final long DELAYED_SECONDS =3000;
     private void setupEventListeners() {
@@ -116,7 +111,7 @@ FrameLayout mSearchResult;
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            startInternalActivity(SettingsActivity.class);
         }
 
         return super.onOptionsItemSelected(item);
