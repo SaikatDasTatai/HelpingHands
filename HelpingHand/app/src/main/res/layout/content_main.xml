@@ -80,10 +80,23 @@
                 />
 
         </LinearLayout>
+        <ProgressBar
+            android:id="@+id/requestBar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:background="@color/colorPrimary"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+
+            />
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/hhframelayout">
+            android:id="@+id/hhframelayout"
+            android:visibility="gone">
 
         </FrameLayout>
     </LinearLayout>
