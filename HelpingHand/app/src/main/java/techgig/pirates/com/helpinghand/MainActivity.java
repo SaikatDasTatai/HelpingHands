@@ -1,5 +1,7 @@
 package techgig.pirates.com.helpinghand;
 
+import android.content.Intent;
+import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -14,13 +16,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ProgressBar;
 
 import techgig.pirates.com.helpinghand.fragments.LocationSearchFragment;
 import techgig.pirates.com.helpinghand.fragments.dummy.DummyContent;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener ,LocationSearchFragment.OnListFragmentInteractionListener{
-
+Button mSearchButton ;
+ProgressBar mSearchProgress;
+FrameLayout mSearchResult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,10 +46,42 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        initializeLayoutVariables();
+        setupEventListeners();
+
+
+
 
         setupLocationFragment();
 
     }
+   private final long DELAYED_SECONDS =3000;
+    private void setupEventListeners() {
+        mSearchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSearchResult.setVisibility(View.GONE);
+                mSearchProgress.setVisibility(View.VISIBLE);
+                (new Handler()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                     mSearchResult.setVisibility(View.VISIBLE);
+                     setupLocationFragment();
+                     mSearchProgress.setVisibility(View.GONE);
+                    }
+                }, DELAYED_SECONDS);
+            }
+        });
+    }
+
+    private void initializeLayoutVariables() {
+        mSearchButton = findViewById(R.id.searchButton);
+        mSearchProgress = findViewById(R.id.requestBar);
+        mSearchResult = findViewById(R.id.hhframelayout);
+
+    }
+
     private void setupLocationFragment(){
         LocationSearchFragment myf = new LocationSearchFragment();
 
