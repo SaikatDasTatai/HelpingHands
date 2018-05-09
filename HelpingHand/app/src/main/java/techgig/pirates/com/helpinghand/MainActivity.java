@@ -128,19 +128,22 @@ FrameLayout mSearchResult;
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_blood) {
+            startInternalActivity(MainActivity.class);
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+        }  else if (id == R.id.nav_manage) {
 
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void startInternalActivity(Class mainActivityClass) {
+        Intent newactivity = new Intent(getApplicationContext(),mainActivityClass);
+        startActivity(newactivity);
+
     }
 
     @Override
