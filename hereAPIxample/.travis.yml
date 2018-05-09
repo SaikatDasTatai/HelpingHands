@@ -1,0 +1,36 @@
+language: android
+
+sudo: required
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - tools
+
+jdk:
+  - oraclejdk8
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache
+
+install:
+  - echo $ANDROID_HOME
+  - mkdir -p $ANDROID_HOME/licenses
+  - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e" > $ANDROID_HOME/licenses/android-sdk-license
+  - cat $ANDROID_HOME/licenses/android-sdk-license
+
+before_script:
+  - travis_wait .ci/preInstall.sh
+
+script:
+  - WRAPPER=$(find . -type f -executable -name gradlew -print -quit)
+  - $WRAPPER components # Dummy call to trigger Android SDK auto-download.
+  - $WRAPPER buildAll
