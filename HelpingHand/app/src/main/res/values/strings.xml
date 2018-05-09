@@ -43,4 +43,18 @@
         <item>KOLKATA</item>
 
     </string-array>
+
+    <!--Setting strings-->
+    <string name="email_address">Username</string>
+    <string name="mobile_number">Phone</string>
+    <string name="privacy">Privacy</string>
+    <string name="terms">Terms and Conditions</string>
+    <string name="email_address_text">bjoy@ahcpllc.com</string>
+    <string name="phone_text">+1 (352) 585 - 3690</string>
+    <string name="username">JOY BARBARA</string>
+
+    <!--touch id-->
+    <string name="enable_touchid">Enable Touch ID</string>
+    <string name="switch_yes">Yes</string>
+    <string name="switch_no">No</string>
 </resources>

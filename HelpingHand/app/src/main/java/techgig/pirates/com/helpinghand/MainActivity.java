@@ -132,6 +132,7 @@ FrameLayout mSearchResult;
             startInternalActivity(MainActivity.class);
 
         }  else if (id == R.id.nav_manage) {
+            startInternalActivity(SettingsActivity.class);
 
         }
 
