@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "724912842575",
+    "firebase_url": "https://helpinghands-a800a.firebaseio.com",
+    "project_id": "helpinghands-a800a",
+    "storage_bucket": "helpinghands-a800a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724912842575:android:4c0f5b4b5953a5af",
+        "android_client_info": {
+          "package_name": "com.yomobility.helpinghands"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724912842575-dpku8ntds0ki1fkv2ms25bbhk5ju0871.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy3V783QKL4mes554RoYTGyeG_RBErg8A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
